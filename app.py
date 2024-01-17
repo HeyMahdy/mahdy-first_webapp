@@ -1,9 +1,23 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
+JOBS = [
+  {
+     'id' : 1,
+     'title' : 'Marketing',
+     },
+  {
+     'id' : 2,
+     'title' : 'human resources',
+     },
+  {
+     'id' : 3,
+     'title' : 'Admin',
+     }
+]
 @app.route('/')
 def Hello_world():
-    return "Hello World"
+    return render_template('home.html')
 
 print(__name__)
 if (__name__== "__main__") :
